@@ -6,21 +6,12 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Build
-        run: yarn
-      - name: Build and Deploy
-        run: yarn build
       - name: Copy repository contents via scp
         uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
-          port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          # Selecting all folders except "node_modules"
-          source: ".,!node_modules"
-          # The path is based on the directory where the user logged into the server starts
-          target: "/var/www/"
-        
+          port: ${{ secrets.SSH_PORT }}
+          source: "."
+          target: "/home"
