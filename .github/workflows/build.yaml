@@ -13,7 +13,6 @@ jobs:
       - name: Build and Deploy
         run: yarn build
       - name: Copy repository contents via scp
-        run: scp -i ${{ secrets.SSH_PRIVATE_KEY }} ./dist ubuntu@13.213.67.241:/home
         uses: appleboy/scp-action@master
         with:
           host: 13.213.67.241
@@ -21,7 +20,7 @@ jobs:
           port: 22
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           # Selecting all folders except "node_modules"
-          source: ".,!node_modules"
+          source: "*"
           # The path is based on the directory where the user logged into the server starts
           target: "/var/www/"
         
