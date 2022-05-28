@@ -12,7 +12,7 @@ jobs:
         run: yarn
       - name: Build and Deploy
         run: yarn build
-      - name: Publish
+      - name: Copy repository contents via scp
         uses: appleboy/scp-action@master
         with:
           host: 13.213.67.241
@@ -22,5 +22,5 @@ jobs:
           # Selecting all folders except "node_modules"
           source: ".,!node_modules"
           # The path is based on the directory where the user logged into the server starts
-          target: "home"
+          target: "/var/www/"
         
