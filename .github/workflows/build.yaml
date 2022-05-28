@@ -12,3 +12,13 @@ jobs:
         run: yarn
       - name: Build and Deploy
         run: yarn build
+      - name: Publish
+        uses: nogsantos/scp-deploy@master
+        with:
+          src: ./dist/*
+          host: ${{ secrets.SSH_HOST }}
+          remote: ${{ secrets.SSH_DIR }}
+          port: ${{ secrets.SSH_PORT }}
+          user: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+        
