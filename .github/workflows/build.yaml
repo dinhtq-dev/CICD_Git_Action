@@ -23,5 +23,5 @@ jobs:
           # Selecting all folders except "node_modules"
           source: "*"
           # The path is based on the directory where the user logged into the server starts
-          target: "/var/www/"
+          target: "/home"
         
