@@ -1,4 +1,4 @@
-name: learn-action
+name: DEPLOY TO SERVER
 on: 
   push:
     branches: [ main ]
@@ -8,3 +8,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Build
+          run: |
+            yar
+      -name: Build and Deploy
+      name: SSH deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
