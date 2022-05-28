@@ -18,33 +18,7 @@ jobs:
           host: 13.213.67.241
           username: ubuntu
           port: 22
-          key: -----BEGIN RSA PRIVATE KEY-----
-MIIEowIBAAKCAQEArooJQSVz1kbYKnQfvfRN1QY4g6sW1iJ8SxT3rxsk+/GwPwBq
-cKa4QKRE3Lu830sGQ0vZvRNEc3Gmx4VCoyZ4spfXOwNLVZ8mpdYMAfb8jFIbJJ+M
-myF9sBjxl99UvSWD5TZB6hR1IhQ7iCtJlnEOxzNj0mSi0b+rGDA9LhoAc+F9msi5
-bPZc7ZNH8qg2FG6OKNySDKO9J/rIy2/ykL0/kFTPJqM7McmWtn7y5NvP4Bvwf0tx
-dJyDHtrwaDDe4Dg9ByUPLbVI4D6M54ol1INpU2JkBTUMnFcuoNrTec5PbOaZOtBA
-88iHpdn4Vg9nLvRLYA8wNOgPqrOd4twy2cYk4QIDAQABAoIBAB2k7jt1W/5J3A8h
-1/5QTyPeQZ0DYwaNpuSts/+2sYplG1UoAewONP8tp1CCRmr6eB7X9Cxr6FVfOT9r
-/8xsDVXv+itYvOPW+x5xg2qWA4DltRx8SMpUXt+Y7Pepg9/4TjWRCJL0VIysOQxA
-pef6XdMxhEPIueq8Dhg2oT2CRw9nNjqB9yvoQM91J1oFMAwcTRd9WsFxlOD6hnwC
-5J+mUG/m2FQ1DHwcugTRiZqeXSTzapcy8WSevXLJZM342Q1PMzVHMdUs7ABC/Y78
-zxZFcxT3DuEFPAnMIHeqyZfHf0qnZdHoEu1+LtfsjfF/7NVgyiGlEnc3aeVw/rh7
-EV6Uqh0CgYEA1UFgxU3uJ7ZJ6WeYh4OEFPP8iNn+DK/3BhWwrvoFYLAjU6nudJP7
-a4b+0K3a0pgHmWY5ntUlOOul6scJ0qwH+6TAdrGeot0l6U3QwEIS2MtuuAKN/I+5
-Ox5ZmFW144EmbC/0/QpxvzESmyaluRif2fDNFNok4tyHnu3ybgOTKmMCgYEA0YYK
-1rVpYmpSY6UbRZHOCtEkVjm/AO3ITEbQqNcSBicdfbeBZ045em1O/5kYOUFZ1Irb
-BqIhesjRckpizE86tT3Qx5PrwGkYpKiwIGPDQp/eDn1TZD9NeOJ+/oDHU3g8FS+E
-4q6wfmXAWjeUlpNQbfmLp5JgWLDCRD3BXQcvlOsCgYEAx6QJ3QwkvSapMQmbwJl9
-iEQVkWRKskP1hMu/eT9001xx5fv60UZMJBDf8iof5fEPhCswHCK8UvpAfHdTGdeV
-LZ7B0xxbP2q6+BuyJpp0nGJuR3OUyvEd3lt+Ut9ChTY96yBGQLGLZQqiuX7HvG1y
-EIye4TuLNppvmHh38UgFeLMCgYBPLkfkUlSMM8AFFj1TMkHahqUjzNjpAfODF/P9
-CqIuHxQfEX1ezAoewTZsk6+6236WOw+A1z6txzyX45KowXxfSAghlD4wzcbZW0KM
-Swdco0voz+X26ZFekMILbiFl4vdZzkZ64Cek7NEfhwepS+zGUts7La8pdUtFPM1Z
-WcDalwKBgBMNBJTm5hIMyzq9yVU5txsLWxOjFoB43q39MXckvPVGyRERT1M26iuZ
-RNJA7nDKalgATX0AjWz6kp2k54Rn3u17nFAPvo+jXHinzIjfgXJyttv5fDZNIAUU
-zZvG+6eeGgvsrGPgfK66Dl165uCq74iijGo9/9WcgAc6WcserSJW
------END RSA PRIVATE KEY-----
+          key: "${{ secrets.SSH_PRIVATE_KEY }}"
           # Selecting all folders except "node_modules"
           source: "*"
           # The path is based on the directory where the user logged into the server starts
