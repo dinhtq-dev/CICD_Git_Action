@@ -19,9 +19,7 @@ jobs:
           username: ubuntu
           port: 22
           key: "${{ secrets.SSH_PRIVATE_KEY }}"
-          overwrite: true
-          # Selecting all folders except "node_modules"
-          source: "*"
-          # The path is based on the directory where the user logged into the server starts
-          target: "/home"
+          script: |
+            whoami
+            ls -al
         
