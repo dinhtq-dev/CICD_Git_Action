@@ -5,11 +5,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        use: actions/checkout@v2
-      - name: User Node V.16x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 16.x
+  steps:
+  - uses: actions/checkout@v3
+  - uses: actions/setup-node@v3
+    with:
+      node-version: 16
+  - run: npm ci
+  - run: npm test
